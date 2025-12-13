@@ -152,7 +152,6 @@
 
     .about img {
       flex: 1 1 auto;
-      max-width: 100%;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
