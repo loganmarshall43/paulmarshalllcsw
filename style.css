@@ -158,7 +158,6 @@
     }
 
     .about-photo {
-  width: 100%;
   max-width: 10%;   /* controls how big it appears */
   aspect-ratio: 1 / 1; /* keeps it square */
   object-fit: cover;
