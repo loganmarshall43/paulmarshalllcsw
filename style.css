@@ -150,19 +150,25 @@
       gap: 2rem;
     }
 
-    .about img {
-      flex: 1 1 auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+.about img {
+  flex: 0 0 auto;           /* KEY: do not grow */
+  width: 240px;             /* set actual display size */
+  height: 240px;            /* keep it square */
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
-    .about-photo {
-  max-width: 10%;   /* controls how big it appears */
-  aspect-ratio: 1 / 1; /* keeps it square */
+
+.about-photo {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
+
 
 /* About section layout tweak */
 .about .container {
