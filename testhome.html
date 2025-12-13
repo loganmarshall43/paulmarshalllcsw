@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<link>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Therapist Landing Page</title>
-  <link> rel="stylesheet" href="styles.css"> </link>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -19,10 +19,29 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Welcome to Your Practice</h1>
-    <p>Providing compassionate therapy services to help you find peace, balance, and growth. Let's take the first step together.</p>
-    <a href="https://paul-marshall.clientsecure.me" class="btn">Book a Session</a>
+  <!-- HERO with image + two buttons -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-inner">
+      <h1>Compassionate Therapy for Real Life</h1>
+      <p>
+        A supportive space to help you find clarity, build resilience, and move forward with confidence.
+      </p>
+
+      <div class="hero-actions">
+        <!-- Learn More: scrolls to the Services section -->
+        <a class="btn btn-ghost" href="#services">Learn More</a>
+
+        <!-- Book Now: external booking link -->
+        <a
+          class="btn btn-primary"
+          href="https://paul-marshall.clientsecure.me"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book an Appointment
+        </a>
+      </div>
+    </div>
   </section>
 
   <section id="about" class="about">
@@ -30,7 +49,10 @@
       <img src="https://via.placeholder.com/600x400" alt="Therapy Session Placeholder">
       <div class="text">
         <h2>About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat urna sit amet felis sagittis, quis luctus nisl aliquet. Integer vitae purus nec dui varius auctor.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat urna sit amet felis sagittis,
+          quis luctus nisl aliquet. Integer vitae purus nec dui varius auctor.
+        </p>
       </div>
     </div>
   </section>
@@ -68,7 +90,7 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <form>
+      <form onsubmit="event.preventDefault(); alert('Thanks! This demo form does not submit anywhere yet.');">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
