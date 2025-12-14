@@ -271,4 +271,9 @@
       nav { margin-top: 1rem; }
       .about .container, .services .container, .testimonials .container { flex-direction: column; }
       .hero-inner { padding: 1.5rem; }
-    }
+  .about-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+}
