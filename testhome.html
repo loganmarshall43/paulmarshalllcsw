@@ -15,7 +15,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#testimonials">Testimonials</a>
+      <!-- <a href="#testimonials">Testimonials</a> -->
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -23,9 +23,9 @@
   <!-- HERO with image + two buttons -->
   <section class="hero" aria-label="Hero">
     <div class="hero-inner">
-      <h1>Compassionate Therapy for Real Life</h1>
+      <h1>Paul Marshall, LCSW</h1>
       <p>
-        A supportive space to help you find clarity, build resilience, and move forward with confidence.
+        Offering individual EMDR therapy as well EMDR consultation.
       </p>
 
       <div class="hero-actions">
@@ -55,7 +55,7 @@
       <div class="text">
         <h2>About Me</h2>
         <p>
-I am a licensed clinical social worker with over 25+ years experience.  I am a certified EMDR therapist and an EMDRIA approved consultant.    My experience is in rural Utah.  Working as a rural therapist has its ups and downs.  The downside is there is little support as a provider.  The upside is I have treated many disorders across the lifespan.  My experience is rich because i have had to learn and grow along the way to be an effective provider for those seeking services.  My EMDR journey has been just that, a journey.  I was lost for a while then I took a training from Deany Laliotis and started consultation.  For the last four years that has been my mission and i am now a competent EMDR therapist.  I love the outdoors, hiking and camping.  I serve all ages.    
+I am a licensed clinical social worker with over 25+ years experience.  I am a certified EMDR therapist and an EMDRIA approved consultant. My experience is in rural Utah.  Working as a rural therapist has its ups and downs.  The downside is there is little support as a provider.  The upside is I have treated many disorders across the lifespan.  My experience is rich because I have had to learn and grow along the way to be an effective provider for those seeking services.  My EMDR journey has been just that, a journey.  I was lost for a while then I took a training from Deany Laliotis and started consultation.  For the last four years that has been my mission and i am now a competent EMDR therapist.  I love the outdoors, hiking and camping.  I serve all ages.    
 Currently licensed in Utah and Virginia.  
         </p>
       </div>
@@ -65,21 +65,21 @@ Currently licensed in Utah and Virginia.
   <section id="services" class="services">
     <div class="container">
       <div class="card">
-        <h3>Individual Therapy</h3>
-        <p>Personalized one-on-one sessions tailored to your needs.</p>
+        <h3>Post-Traumatic Stress Disorder</h3>
+        <p></p>
       </div>
       <div class="card">
-        <h3>Couples Therapy</h3>
-        <p>Strengthen communication and connection with your partner.</p>
+        <h3>Depression & Anxiety</h3>
+        <p></p>
       </div>
       <div class="card">
-        <h3>Group Workshops</h3>
-        <p>Interactive workshops focused on growth and community support.</p>
+        <h3>EMDR Consultation</h3>
+        <p></p>
       </div>
     </div>
   </section>
 
-  <section id="testimonials" class="testimonials">
+  <!-- <section id="testimonials" class="testimonials">
     <div class="container">
       <blockquote>
         "Working with this therapist has truly changed my life for the better. Highly recommend!"
@@ -90,22 +90,64 @@ Currently licensed in Utah and Virginia.
         <p>- John S.</p>
       </blockquote>
     </div>
-  </section>
+  </section> -->
 
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <form onsubmit="event.preventDefault(); alert('Thanks! This demo form does not submit anywhere yet.');">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+<form
+  id="contactForm"
+  action="https://formspree.io/f/mvgelnbl"
+  method="POST"
+>
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+
+  <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
+
+  <!-- Optional extras -->
+  <input type="hidden" name="_subject" value="New message from paulmarshalllcsw.com">
+  <input type="text" name="_gotcha" style="display:none"> <!-- spam honeypot -->
+
+  <button type="submit">Send Message</button>
+
+  <p id="formStatus" style="margin-top: 10px;"></p>
+</form>
+
     </div>
   </section>
 
   <footer>
     &copy; 2025 Your Practice. All rights reserved.
   </footer>
+  <script>
+  const form = document.getElementById("contactForm");
+  const statusEl = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Sending...";
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        statusEl.textContent = "Message sent! I’ll get back to you soon.";
+        form.reset();
+      } else {
+        statusEl.textContent = "Sorry — something went wrong. Please try again.";
+      }
+    } catch (err) {
+      statusEl.textContent = "Network error — please try again.";
+    }
+  });
+</script>
+
 </body>
 </html>
