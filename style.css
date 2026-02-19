@@ -183,6 +183,10 @@
   }
 }
 
+.about.alt {
+  background: #f7f7f7;
+}
+
 
     .about .text { flex: 2 1 420px; }
 
